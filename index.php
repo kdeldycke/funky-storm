@@ -57,8 +57,7 @@
 	//lien pour afficher les anciennes news
   print("<center><a href=\"old_news.php\">Consulter les anciennes news</a></center><br><br><br>");
 
-	//récupération des 10 derniers messages du forum
-	
+
 	// ------------------------------------------------------------------------- //
 	// Affiche les n dernières discussions de Phorum.                            //
 	// ------------------------------------------------------------------------- //
@@ -67,37 +66,31 @@
 	// Web:    http://www.phpinfo.net/                                           //
 	// ------------------------------------------------------------------------- //
 
-	$cfgHote  = "localhost";
-	$cfgUser  = "root";
-	$cfgPass  = "";
-	$cfgBase  = "Forums";
-
-	$cfgTable = "main_forum";
 	$cfgRep   = "forum/";
 	$cfgRead  = "read.php";
 
 	$nbMsgForum = 10; // Nbre de discussions à afficher
 
 	// connexion à la base
-	mysql_connect($cfgHote, $cfgUser, $cfgPass);
+	db_connexion();
 
 	print_news_title("Les $nbMsgForum derniers messages postés sur le forum<br>");
 
 	// Affichage des fils de discussion et du nombre de réponses
 	$sql  = "SELECT id,datestamp,subject,author,thread ";
-	$sql .= "FROM ".$cfgTable." ";
+	$sql .= "FROM ".$forum_table." ";
 	$sql .= "WHERE approved = 'Y' ";
 	$sql .= "ORDER BY id DESC LIMIT 0,".$nbMsgForum;
 
-	$resultat = mysql_db_query($cfgBase, $sql);
+	$resultat = mysql_db_query($forum_base, $sql);
 
 	while ($message = mysql_fetch_array($resultat)) {
 
     $sql2  = "SELECT count(*) ";
-  	$sql2 .= "FROM ".$cfgTable." ";
+  	$sql2 .= "FROM ".$forum_table." ";
   	$sql2 .= "WHERE approved = 'Y'";
 
-  	$resultat2 = mysql_db_query($cfgBase, $sql2);
+  	$resultat2 = mysql_db_query($forum_base, $sql2);
   	$nbRep = mysql_fetch_array($resultat2);
 
   	$date  = substr($message[1], 8, 2) . "/";
@@ -116,10 +109,10 @@
 
 	// Nb msg aujourd'hui
 	$sql  = "SELECT COUNT(id) ";
-	$sql .= "FROM ".$cfgTable." ";
+	$sql .= "FROM ".$forum_table." ";
 	$sql .= "WHERE approved = 'Y' AND datestamp LIKE '".date("Y-m-d")."%'";
 
-	$resultat = mysql_db_query($cfgBase, $sql);
+	$resultat = mysql_db_query($forum_base, $sql);
 	$enr = mysql_fetch_array($resultat);
 
 	echo "<br>".($nb = $enr[0])." message".($nb > 1 ? "s" : "");
@@ -131,10 +124,10 @@
 	$hier = mktime(0, 0, 0, $elts[1], $elts[0]-1, $elts[2]);
 
 	$sql  = "SELECT COUNT(id) ";
-	$sql .= "FROM ".$cfgTable." ";
+	$sql .= "FROM ".$forum_table." ";
 	$sql .= "WHERE approved = 'Y' AND datestamp LIKE '".date("Y-m-d", $hier)."%'";
 
-	$resultat = mysql_db_query($cfgBase, $sql);
+	$resultat = mysql_db_query($forum_base, $sql);
 	$enr = mysql_fetch_array($resultat);
 	echo " [".$enr[0]." hier]";
 	

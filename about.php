@@ -55,6 +55,18 @@ require('mep.php');
 	
   <? print_news_title("What's news ?<br>"); ?>
 	<br>
+	<b> octobre 2002: </b><br>
+	admins: gestion des utilisateurs et des droits de modification du site via MySQL.<br>
+	admins: possibilité de gérer le livre d'or.<br>
+	site: modification du compteur live.<br>
+	members: ajout d'un petit commentaire.<br>
+	photos: modification du texte.<br>
+	contact: e-mail de guillaume.<br>
+	<br>
+	<b>4 octobre 2002: n'oubliez pas de venir me voir demain soir.</b><br>
+	photos: ajout des photos du concert à Féchain (22 juin 2002).<br>
+  livre d'or: réparé !<br>
+	<br>
 	<b>29 septembre 2002: bonne fête à Michel, saint patron des ingénieurs informaticiens.</b><br>
 	site: ajout d'un livre d'or.<br>
 	<br>
@@ -229,7 +241,7 @@ require('mep.php');
 	
 	site
 	  mettre un log file pour la 404
-		faire un live counter qui fonctionne
+		tester le nouveau live counter
 		créer un cadre "photo du groupe au hasard"
 		faire un lien discret en bas de chaque page pour "retour en haut de page" 
 
@@ -245,7 +257,6 @@ require('mep.php');
 		
 	Terminer la page admin
 		mettre au point le script d'ajout (c) en php3
-		re-clarifier les histoires de id_membres et variables enregistr&eacute;es en sessions
 		fusionner l'ajout/modif des news avec ajout/mofif des illustrations.
 		
 		
@@ -255,7 +266,6 @@ require('mep.php');
 	
 	Outil de statistiques
 	  le fusionner avec la partie privée et faire le ménage des choses inutiles
-    automatiser l'autodesactivation des stats si le serveur mySQL de chez Free est down
 	
 	
 	Automatiser la saisie des concert (tout stocker dans un file txt)
@@ -271,7 +281,6 @@ require('mep.php');
 		pb d'alignement de la hierarchisation (sous mozilla uniquement à cause du respect de l'héritage des propriété des class css)
 		pb de phorum concernant les &lt;&gt; qui ne sont pas convertis en html entities dans le titre
 		couper les messages trop long ?
-		utiliser les cookies ?
 		
 		
 	Histoire
@@ -289,7 +298,6 @@ require('mep.php');
 		
 	photos
 	  changer la photo de bienvenue
-		mettre un compteur de hits pour chaque photos
 		le lien vers la liste des photos est le nom de l'evenement avec à coté la photo avec le + de hits
 		afficher le label correct dans le cadre de la liste des photo (afficher un string décrivant l'evenement funky plutot que la simple date)
 		chercher des rédacteurs (reviewer) pour les différents concert de FS.

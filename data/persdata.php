@@ -20,7 +20,7 @@ Il est possible de laisser des champs vides.<br>
 	require('items.php');
 		
 	//constante de localisation des fichiers de données
-  $data_path = 'members/'.$name.'/personal.txt';
+  $data_path = 'members/'.strtolower($name).'/personal.txt';
   
 	//récupération et affichage des données persos deja existantes
 	if(file_exists($data_path)) { //si fichier de données perso inexistant

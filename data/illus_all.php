@@ -4,8 +4,7 @@
 	require('private.php');
   require('mep.php');
 	print_header('', 1);
-	print_news_title("Gestion des illustrations des news écrites par ".ucfirst($name).".<br>");
-
+	print_news_title("Gestion des illustrations des news écrites par $name.<br>");
 
 ?>
 

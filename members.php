@@ -3,6 +3,12 @@
   require('glob_var.php');
   require('mep.php');
 	
+	$members[] = "vincent";
+	$members[] = "sylvain";
+	$members[] = "maxence";
+	$members[] = "guillaume";
+	$members[] = "emeric";
+	
 	//demande affichage du membre ou affichage du groupe
   $existenz = 0; //initialisation: le membre n'existe pas
 	if ($name != '') 	//si demande d'affichage des details d'un membre 
@@ -21,6 +27,9 @@
     print_header("'data/members/gui_on.jpg','data/members/max_on.jpg','data/members/vin_on.jpg','data/members/emr_on.jpg','data/members/syl_on.jpg'");
     //debut de la zone de contenu principal
 	  print_news_title("Les membres permanents de Funky Storm");
+  	print( "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vous pouvez ici <i>admirer</i> les 5 musiciens de Funky Storm au travers de photos, où ils vous apparaîtront dans des positions les plus diverses et les plus insolites.<br>");
+		print( "Ces même membres vous feront passer de l'amour à la haine, de la mélancolie à l'espoir et du rire à la pitié de part leurs réponses aussi farfelues que sincères, dans un questionnaire aux 72 questions pièges que les plus grands DRH de France et de Navarre nous envie.<br><br>" );
+  	print( "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A prendre au x-ième degrés donc...<br><br>" );
     print( "		<table border=\"0\" cellpadding=\"0\" cellspacing=\"10\" width=\"100%\">\n" );
     print( "  	  <tr align=\"center\">\n" );
     print( "    	  <td width=\"20%\"><a onmouseout=\"MM_swapImgRestore()\" onmouseover=\"MM_swapImage('img0','','data/members/gui_on.jpg',1)\" href=\"members.php?name=guillaume\"><img name=\"img0\" alt=\"guillaume\" src=\"data/members/gui_off.jpg\" height=\"324\" width=\"84\" border=\"0\"><br>Guiguit'</a></td>\n" );

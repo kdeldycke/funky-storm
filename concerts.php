@@ -32,14 +32,6 @@ require('mep.php');
     </tr>
 		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
 		<tr class="date">
-      <td class="datedate">Septembre 2002</td>
-      <td class="dateinfo">Le Melting café</td>
-      <td class="dateinfo">Lille [59], France</td>
-      <td class="datefoto">-</td>
-      <td class="dateinfo">plan à confirmer</td>
-    </tr>
-		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
-		<tr class="date">
       <td class="datedate">Mai 2003</td>
       <td class="dateinfo">Festival Imagin'Aire</td>
       <td class="dateinfo">Le Cateau [59], France</td>
@@ -106,7 +98,7 @@ require('mep.php');
       <td class="dateinfo">22 juin 2002, 22h</td>
       <td class="dateinfo">Scènes ouvertes du SIRA</td>
       <td class="dateinfo">Féchain [59], France</td>
-      <td class="datefoto">-</td>
+      <td class="datefoto"><a href="data/gig_pics.php?date=220602">[X]</a></td>
       <td class="dateinfo">&nbsp;</td>
     </tr>
 		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>

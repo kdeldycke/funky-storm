@@ -1,0 +1,211 @@
+
+body {
+		font-family: arial,helvetica,verdana,sans-serif;
+		font-size: 12px;
+		color: #000000;
+		background-color: #999999;
+		/*background-image: url("include/back.gif");*/
+  }
+
+	
+	
+/*********************************/
+/* cellule par défaut
+/*********************************/
+td.text {
+    font-size: 12px;
+		vertical-align: top;
+  }
+	
+	
+	
+/*********************************/
+/* formatage message d'alerte/de succes de l'espace perso
+/*********************************/
+span.warning {
+		font-weight: bold;
+		color: #ff0000;
+  }
+	
+span.success {
+		font-weight: bold;
+		color: #00ff00;
+  }
+	
+	
+	
+/*********************************/
+/* Liens par défaut
+/*********************************/
+a:link {text-decoration: none;}
+a:active {text-decoration: underline;}
+a:visited {text-decoration: none;}
+a:hover	{text-decoration: underline;}
+
+
+
+/*********************************/
+/* Formatage barre de separation du banner haut
+/*********************************/
+td.line {background-color: #000000;}
+
+
+
+/*********************************/
+/* Formatage cellule sous-barre
+/*********************************/
+td.b1 {
+		font-weight: bold;
+		background-color: #cccccc;
+		font-size: 12px;
+		color: #666666;
+  }
+	
+
+	
+/*********************************/
+/* Formatage cellule titre des rubriques dans le menu de gauche
+/*********************************/
+table.m0 {
+    background-color: #cccccc;
+		border: 0;
+		border-spacing: 1px;
+	}
+
+tr.m1 {
+		background-color: #999999;
+		font-weight: bold;
+		font-size: 12px;
+		color: #ffffff;
+		text-align: center;
+  }
+
+/* Formatage contenu/liens des sous-rubriques dans le menu de gauche */
+tr.c1 {
+		background-color: #999999;
+		font-size: 12px;
+		color: #ffffff;
+  }
+	
+a.m2 {font-weight: bold;}
+a:link.m2 {color: #ffffff;}
+a:active.m2 {color: #ffff33;}
+a:visited.m2 {color: #cccccc;}
+a:hover.m2 {color: #ffff00;}
+
+
+
+/*********************************/
+/* formatage des champs de saisie
+/*********************************/
+
+select.field {
+    font-size: 12px;
+}
+
+input.field {
+    font-size: 12px;
+}	
+	
+textarea.field {
+		font-family: arial,helvetica,verdana,sans-serif;
+    font-size: 12px;
+}
+	
+	
+
+/*********************************/
+/* formatage contour cadre news
+/*********************************/
+table.n0 {
+    background-color: #ff9933;
+		border: 0;
+		border-spacing: 1px;
+	}
+
+/* formatage barre titre news */
+td.n1 {
+    background-color: #ff9933;
+		vertical-align: top;
+    font-size: 14px;
+		font-weight: bold;
+		color: #000000;
+	}
+
+/* formatage contenu news */
+td.n2 {
+    background-color: #cccccc;
+		vertical-align: top;
+    font-size: 12px;
+		color: #000000;
+	}
+	
+/* formatage signature news */
+td.newssign {
+		text-align: right;
+    font-size: 12px;
+		color: #666666;
+	}
+	
+
+	
+/*********************************/
+/* formatage copyright et compteur bas de page
+/*********************************/
+td.copy {
+		vertical-align: top;
+		text-align: center;
+    font-size: 9px;
+		font-weight: bold;
+		color: #999999;
+		background-color: #000000;
+	}
+	
+span.visit {
+    font-size: 10px;
+		color: #000000;
+	}
+
+td.copy2 {
+		text-align: right;
+		font-style: italic;
+		font-size: 10px;
+	}
+	
+	
+	
+/*********************************/
+/* formatage des tableuax de dates
+/*********************************/
+/* 1er ligne = ligne des titres */
+tr.head {
+    font-size: 12px;
+		font-weight: bold;
+		color: #ffffff;
+		background-color: #999999;
+	}
+
+/* ligne d'une date */
+tr.date {
+    font-size: 12px;
+		color: #000000;
+	}
+	
+/* cellule de la date */
+td.datedate {
+		font-weight: bold;
+		vertical-align: top;
+  }
+
+/* cellule lien photos */
+td.datefoto {
+		vertical-align: top;
+		text-align: center;
+  }
+	
+/* autres cellule*/
+td.dateinfo {
+		vertical-align: top;
+  }
+
+	

@@ -17,16 +17,10 @@
   if (!isset($url))
 	  $url = 'index.php';
 	
-	//si on va directement chez un membre, on conserve sa variable
-	if(isset($member_name))
-	  $url = $url.'?name='.$member_name;
-	
 	//suppression du referer car il contient l'ID
 	header('Referer: ');
 	
 	// go to... $url
 	header('location: '.home.$url);
-
-
-
+	
 ?>

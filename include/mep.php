@@ -18,42 +18,66 @@
 	  return $pre_option.$dest_page.$post_option; //on retourne la chaine/lien
   }
 	
-//--------------------------------------------------------
-// Fonction d'ouverture de connection à la base de donnée
-//--------------------------------------------------------
-//gérer les erreur ici avec arret du script si pb et affichage
-//d'une page d'erreure appropié avec rediretion
-
-  function db_connexion() {
-	  $cfgHost  = "sql.free.fr";
-		$cfgUser  = "www.funkystorm";
-		$cfgPass  = "ruROcoB4";		
-		@mysql_connect($cfgHote, $cfgUser, $cfgPass)
-		  or die('Erreur SQL !'.$sql.'<br>'.mysql_error());
-  }
-
-
+	
 	
 //--------------------------------------------------------
 // Fonction d'affichage du nombre de connectés simultané
 //--------------------------------------------------------
 /*
   function print_live_counter() {
-    require("livecounter.php");
-    $nb = nbc();
+		$timeout = 120;	 // Temps en secondes au bout duquel un utilisateur est considéré déconnecté
+		
+		db_connexion();
+		
+		$sql  = "DELETE FROM ".$livecounter_table." ";
+		$sql .= "WHERE HeureLimite < now()";
+
+		mysql_db_query($livecounter_base, $sql);
+		
+		$sql  = "SELECT count(*) "; 
+		$sql .= "FROM ".$livecounter_table." ";
+		$sql .= "WHERE IP = '$REMOTE_ADDR'";
+
+		$result = mysql_db_query($guestbook_base, $sql);
+
+		if(mysql_num_rows($result) != 0) { // Déjà connecté
+			  $sql2  = "UPDATE ".$livecounter_table." ";
+				$sql2 .= "SET HeureLimite = HeureLimite + $timeout ";
+				$sql2 .= "WHERE IP = '$REMOTE_ADDR'";
+
+				mysql_db_query($livecounter_base, $sql2);
+				
+		} else {	    // Nouvelle connexion
+		    $sql2  = "INSERT INTO ".$livecounter_table." ";
+				$sql2 .= "(IP, HeureLimite) ";
+				$sql2 .= "VALUES ('$REMOTE_ADDR', now()+$timeout)";
+				
+				mysql_db_query($livecounter_base, $sql2);
+		}
+
+	$sql  = "SELECT count(*) ";
+	$sql .= "FROM ".$livecounter_table;
+		
+  $result = mysql_db_query($guestbook_base, $sql);
+	
+	mysql_close();
+			
+    $nb = mysql_fetch_array($result);
+		$nb = $nb[0];
+		
 		if($nb > 1)
 		  $p = 's';
     echo $nb." personne$p connectée$p";
   }
-*/
-	
+
+	*/
 	
 //--------------------------------------------------------
 // Fonction d'affichage pour mise en page
 //--------------------------------------------------------
 
   //contenu de la barre juste sous le bandeau FS
-  define (high_line_content, "Funky Storm est un groupe français de Fusion/Funk/Métal farandoleux, énergique et vivant.<br>");
+  define (high_line_content, "Funky Storm est un groupe français de Fusion/Funk/Rock farandoleux, énergique et vivant.<br>");
 
  	function print_header($preloaded_img="", $private=0) {
   print( "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd\">" );

@@ -26,7 +26,7 @@
   print_header();
 	
   print_news_title("Photos du concert du $date[0]$date[1]/$date[2]$date[3]/20$date[4]$date[5]<br>");
-
+	
   $gig_photo_dir = 'gigs/'.$date.'/';
 	
 	//a-t-on demandé l'affichage d'une seule photo ?
@@ -125,6 +125,7 @@
         print("</td></tr></table><hr width=\"100%\" size=\"1\">");  //fermeture table d'alignement
 		  }
 		}
+		print("<center><b>Note</b>&nbsp;: les commentaires appartiennent à leurs auteurs (ceux qui les ont postés). Nous n'en sommes pas responsables.</center>");
 		print_news_end();		
 		
 	  print_news_title("Ajouter un commentaire<br>");

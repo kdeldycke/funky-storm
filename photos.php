@@ -13,7 +13,7 @@
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cette rubrique est dédiée à toi, public, car tu auras la possibilité de t'exprimer et de nous faire savoir tes sentiments grâce à un système de commentaires (dont tu va faire bon usage, nous en sommes persuadés et nous te faisons confiance). C'est une manière de te remercier de ta bonne humeur et de ta joie de vivre, dont tu nous gratifie à chacun de nos concerts, nous poussant à toujours allez plus loin.<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avec un peu de chance, tu pourras (qui sait ?) te reconnaître dans le public et dans le cas où la photo t'indisposerait, fais nous le savoir, nous serons compréhensifs.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avec un peu de chance, tu pourras (qui sait ?) te reconnaître dans le public et dans le cas où la photo t'indisposerait, fais nous le savoir, nous serons compréhensifs. Par contre, si tu possède des photos de Funky Storm en concert, n'hésite pas à nous les <a href="mailto:contact@funky-storm.com">envoyer via e-mail</a>.<br>
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous te donnons, public, rendez-vous au prochain concert !<br>
 <br>
@@ -23,6 +23,11 @@
       <td>Evénement</td>
 			<td>Date</td>
     </tr>
+		<tr class="date">
+    	<td class="dateinfo"><a href="data/gig_pics.php?date=220602">Fête de la musique à Féchain</a></td>
+      <td class="dateinfo">22 juin 2002</td>
+  	</tr>
+		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
 		<tr class="date">
     	<td class="dateinfo"><a href="data/gig_pics.php?date=210602">Fête de la musique au Luciole café</a></td>
       <td class="dateinfo">21 juin 2002</td>

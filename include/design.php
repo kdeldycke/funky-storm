@@ -25,7 +25,7 @@
 //--------------------------------------------------------
 
   //contenu de la barre juste sous le bandeau FS
-  define (high_line_content, "Funky Storm est un groupe français de Fusion/Funk/Métal farandoleux, énergique et vivant.<br>");
+  define (high_line_content, "Funky Storm est un groupe français de Fusion/Funk/Rock farandoleux, énergique et vivant.<br>");
 
  	function print_header($preloaded_img="", $private=0) {
 	  print( "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd\">\n" );
