@@ -1,51 +1,70 @@
 <?
 
-	require('glob_var.php');
-	require('db_func.php');
+//------------------------------------------------------------------------------
+// Script vérifiant l'existance de l'utilisateur et autorisant ce dernier à
+// parcourir les pages protogée via une session.
+//------------------------------------------------------------------------------
 
-	
-//--------------------------------------------------------
-// vérifications d'usage avant création de la session
-//--------------------------------------------------------
+require_once('config.inc.php');
 
-  if ($login=='' || $password=='')              // champ(s) vide(s) ?
-      header('location: '.home.'admins/index.php?e=1');               // alors retour à la case départ
-			
-  else {
-	
-			db_connexion(); //fonction de gestion de la connection à la base de données
 
-			$sql  = "SELECT id,name,login,password,guestbook_admin,qa_form ";
-			$sql .= "FROM ".$users_table." ";
-			$sql .= "WHERE login = '$login' AND password = '$password'";
+// récupération des variables postées
+$user_login 		= addslashes($_POST['user_login']);
+$user_password	= md5($_POST['user_password']);
 
-			$result = mysql_db_query($users_base, $sql);
 
-			mysql_close();
-	
-      if (mysql_num_rows($result) == 0)     // utilisateur enregistré ?
-          header('location: '.home.'admins/index.php?e=2');           // retour à la case départ
-					
-      else {                                              // utilisateur en régle, démarrage d'une session
-					$user_param = mysql_fetch_array($result);
-          session_name('id');
-          session_start();
-					$user_id = $user_param[0];
-					session_register("user_id");
-          session_register("login");
-          session_register("password");
-					$name = $user_param[1]; // enregistrement du nom de l'utilisateur
-					session_register("name");
-					$guestbook_admin = $user_param[4]; // enregistrement des droits de modération
-					session_register("guestbook_admin");
-					$qa_form = $user_param[5]; // enregistrement des droits de modération
-					session_register("qa_form");
-          if (SID != '')                                  // si SID est vide, la transmition s'effectue par cookie
-              $url_option = '?'.SID;                      // donc pas besoin de passage par url
-          header('location: '.home.'admins/menu.php'.$url_option);         // affichage de la page à accès restreint
-      }
-			
-  }
+if ($user_login=='' || $user_password=='')              			
+		header('location: '.home.'admins/index.php?e=1');   
 
-	
+else {
+		$connect = mysql_connect($cfg_Host, $cfg_User, $cfg_Pass)
+			or die($sql_die_msg);
+
+    $db = mysql_select_db($users_base)
+			or die($sql_die_msg);
+        
+		$sql  = "SELECT id,login,password,user_page,guestbook_admin,questions,questions_admin,news_writer,news_admin ";
+		$sql .= "FROM `$users_table` ";
+		$sql .= "WHERE `login`=`$user_login` AND `password`=`$user_password`";
+
+		$result = mysql_query($sql);
+    
+    mysql_close($connect);
+    
+		if(mysql_num_rows($result) == 0)
+		    header('location: '.home.'admins/index.php?e=2');
+
+		else {
+				$user_param = mysql_fetch_array($result);
+
+        // formatage données pour enregistrement
+        $user_id 			    = $user_param["id"];
+        $user_page				= $user_param["user_page"];
+        $guestbook_admin	= $user_param["guestbook_admin"];
+        $questions				= $user_param["questions"];
+        $questions_admin	= $user_param["questions_admin"];
+        $news_writer			= $user_param["news_writer"];
+        $news_admin				= $user_param["news_admin"];
+        
+        // enregistrement de la session
+        session_name('id');
+        session_start();
+				session_register("user_id");
+        session_register("user_login");
+        session_register("user_password");
+        session_register("user_page");
+        session_register("guestbook_admin");
+        session_register("questions");
+        session_register("questions_admin");
+        session_register("news_writer");
+        session_register("news_admin");
+        
+        unset($url_option);
+        if(SID != '')              // si SID vide, transmition par cookie
+            $url_option = '?'.SID;  // donc pas besoin de passage par url
+            
+        header('location: '.home.'admins/menu.php'.$url_option);
+		}
+}
+
 ?>

@@ -1,9 +1,8 @@
 <?
 
 
-  // partie privée : vérifications d'usage
-	require('glob_var.php');
-  require('private.php');
+	require_once('glob_var.inc.php');
+  require_once('private.php');
 
 	if(($gig_day == 0) || ($gig_month == 0) || ($gig_year == '') || ($gig_hour == '') || ($gig_place == '') || ($gig_town == '') || ($gig_country == ''))
 	  $erreur = 1;

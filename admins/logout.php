@@ -1,26 +1,22 @@
 <?
 
+//------------------------------------------------------------------------------
+// Ce script permet de se déconnecter propremment de l'espace restreint.
+// La variable $url peut être passée en paramètre pour une redirection au sein
+// du site.    
+//------------------------------------------------------------------------------
+
+require_once('config.inc.php');
 
 
-//--------------------------------------------------------
-// Fonction de transition entre les pages avec suppression
-// de la session et des cookies si on se trouve en lieu privé.
-// (dans ce cas $lo=1).
-//--------------------------------------------------------
-	require('glob_var.php');
-
-	session_name('id');  //on demarre une session. Si il y en avait une precedement, on la récupére, sinon, une nouvelle est créé
-  session_start();  // démarrage de la session
-  session_destroy(); // on detruit la session, quelle soi nouvelle ou pas
+session_name('id');
+session_start();
+session_destroy();
 		
-  //url par défaut: maison
-  if (!isset($url))
-	  $url = 'index.php';
+if(!isset($url))  $url = 'index.php'; 	//url par défaut: maison
+
+header('Referer: ');		//suppression du referer car il contient l'ID
 	
-	//suppression du referer car il contient l'ID
-	header('Referer: ');
-	
-	// go to... $url
-	header('location: '.home.$url);
+header('location: '.home.$url);
 	
 ?>

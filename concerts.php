@@ -24,11 +24,11 @@ require('mep.php');
       <td>Notes</td>
     </tr>
 		<tr class="date">
-      <td class="datedate">24 octobre 2002, 21h</td>
-      <td class="dateinfo">Salsa Verte (en face du Van Gogh)</td>
-      <td class="dateinfo">Valenciennes [59], France</td>
-      <td class="datefoto">-</td>
-      <td class="dateinfo">Avec Meaningless.<br>Entrée gratuite.</td>
+      <td class="datedate">8 février 2003, 20h</td>
+      <td class="dateinfo">MJC/Maison pour tous</td>
+      <td class="dateinfo">Lambres-lez-Douai [59], France</td>
+      <td class="datefoto"><a href="data/gig_pics.php?date=080203">[X]</a></td>
+      <td class="dateinfo">Le concert sera enregistré en live.<br>PAF: 3 euros.</td>
     </tr>
 		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
 		<tr class="date">
@@ -55,6 +55,14 @@ require('mep.php');
       <td>Notes</td>
     </tr>
 		<tr class="date">
+      <td class="dateinfo">24 octobre 2002, 21h</td>
+      <td class="dateinfo">Salsa Verte</td>
+      <td class="dateinfo">Valenciennes [59], France</td>
+      <td class="datefoto">-</td>
+      <td class="dateinfo">Avec Meaningless.<br>Entrée gratuite.</td>
+    </tr>
+		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
+		<tr class="date">
       <td class="dateinfo">28 septembre 2002, 17h</td>
       <td class="dateinfo">Salle des sports</td>
       <td class="dateinfo">Féchain [59], France</td>
@@ -80,9 +88,9 @@ require('mep.php');
 		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
 		<tr class="date">
       <td class="dateinfo">24 août 2002, 13h30</td>
-      <td class="dateinfo">Scènes ouvertes du SIRA (place de la mairie ou salle des fêtes selon la météo)</td>
+      <td class="dateinfo">Scènes ouvertes du SIRA</td>
       <td class="dateinfo">Cantin [59], France</td>
-      <td class="datefoto"><?/*<a href="data/thumbnls.php?date=21062002">[X]</a>*/?>-</td>
+      <td class="datefoto"><a href="data/gig_pics.php?date=240802">[X]</a></td>
       <td class="dateinfo">Avec Lionel Caboche DJ (hip hop/R&amp;B), Entre Guillemets (pop/rock), Cactus in Love (unplugged), New World Project (dance/techno), Bud (grunge), Loreley (rock) et Positive Hate (métal).<br>Entrée libre.</td>
     </tr>
 		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
@@ -96,7 +104,7 @@ require('mep.php');
 		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
 		<tr class="date">
       <td class="dateinfo">22 juin 2002, 22h</td>
-      <td class="dateinfo">Scènes ouvertes du SIRA</td>
+      <td class="dateinfo">Concert avec la municipalité de Féchain</td>
       <td class="dateinfo">Féchain [59], France</td>
       <td class="datefoto"><a href="data/gig_pics.php?date=220602">[X]</a></td>
       <td class="dateinfo">&nbsp;</td>
@@ -104,7 +112,7 @@ require('mep.php');
 		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
 		<tr class="date">
       <td class="dateinfo">21 juin 2002, 21h</td>
-      <td class="dateinfo">le Luciole café (en face de la gare)</td>
+      <td class="dateinfo">le Luciole café</td>
       <td class="dateinfo">Douai [59], France</td>
       <td class="datefoto"><a href="data/gig_pics.php?date=210602">[X]</a></td>
       <td class="dateinfo">Fête de la musique.<br>Deux set de suite !</td>
@@ -112,7 +120,7 @@ require('mep.php');
 		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
 		<tr class="date">
       <td class="dateinfo">15 juin 2002, 20h</td>
-      <td class="dateinfo">le Flamingo (286, rue nationale)</td>
+      <td class="dateinfo">le Flamingo</td>
       <td class="dateinfo">Lille [59], France</td>
       <td class="datefoto"><a href="data/gig_pics.php?date=150602">[X]</a></td>
       <td class="dateinfo">&nbsp;</td>

@@ -1,27 +1,32 @@
 <?
 
 
-  require('glob_var.php');
-	require('mep.php');
-	require('db_func.php');
+	require_once('design.inc.php');
 	
-	print_header();
+include('header.php');
+
   print("<center><a href=\"guestbook_form.php\">Signer le livre d'or</a><br><br></center>");
 	print_news_title("Livre d'or.<br>");
 	
-  db_connexion(); 
+	$connect = mysql_connect($cfg_Host, $cfg_User, $cfg_Pass)
+		  or die($sql_die_msg);
+
+  $db = mysql_select_db($guestbook_base)
+		  or die($sql_die_msg);
 
 	$sql  = "SELECT author,mail,post_date,message ";
-	$sql .= "FROM ".$guestbook_table." ";
-	$sql .= "WHERE show = 'Y' ";
+	$sql .= "FROM `$guestbook_table` ";
+	$sql .= "WHERE `show`='Y' ";
 	$sql .= "ORDER BY post_date DESC";
 
-	$result = mysql_db_query($guestbook_base, $sql);
+	$result = mysql_query($sql);
 
-	mysql_close();
+	mysql_close($connect);
 
+	$txt = "";
+	
 	if(mysql_num_rows($result) == 0)
-	  echo "Aucun commentaire n'a encore été posté dans ce livre d'or.";
+	  $txt .= "Aucun commentaire n'a encore été posté dans ce livre d'or.";
 	else {
   	while ($post_item = mysql_fetch_array($result)) {
 		  //$dateA  = substr($post_item[2], 0, 4);
@@ -30,19 +35,21 @@
   		//$dateH  = substr($post_item[2], 8, 2);
   		//$dateMi = substr($post_item[2], 10, 2);
 			//$post_item[2] = "$dateJ-$dateM-$dateA $dateH:$dateMi"; 
-			print("$post_item[3]");
-			print("<br><br><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tr><td class=\"newssign\">" );
+			$txt .= "$post_item[3]";
+			$txt .= "<br><br><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tr><td class=\"newssign\">" ;
 			if($post_item[1]=='')
-			  echo $post_item[0];
+			  $txt .= $post_item[0];
 			else
-			  print("<a href=\"mailto:$post_item[1]\">$post_item[0]</a>");
-			print(" le $post_item[2]");
-      print("</td></tr></table><hr width=\"100%\" size=\"1\">");  //fermeture table d'alignement
+			  $txt .= "<a href=\"mailto:$post_item[1]\">$post_item[0]</a>";
+			$txt .= " le $post_item[2]";
+      $txt .= "</td></tr></table><hr width=\"100%\" size=\"1\">";  //fermeture table d'alignement
 	  }	
 	}
 
-  print_news_end();
+	print_news_content($txt);
+	
   print("<center><a href=\"guestbook_form.php\">Signer le livre d'or</a><br><br></center>");	
-  print_footer();
+	
+  include('footer.php');
 	
 ?>

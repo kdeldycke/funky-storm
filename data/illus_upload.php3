@@ -1,8 +1,8 @@
 <?
 
   // partie privée : vérifications d'usage
-	require('glob_var.php');
-  require('private.php');
+	require_once('config.inc.php');
+  require_once('private.php');
 
 	
 	settype($news_number, string);	// convertion du n° de news en chaine

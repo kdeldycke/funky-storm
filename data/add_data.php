@@ -2,8 +2,8 @@
 
 
   // partie privée : vérifications d'usage
-	require('glob_var.php');
-  require('private.php');
+	require_once('glob_var.inc.php');
+  require_once('private.php');
 	
 	//c'est juste pour récupérer le nombre d'items max
 	require('items.php');

@@ -1,8 +1,7 @@
 <?
 		
-  // partie privée : vérifications d'usage
-	require('glob_var.php');
-	require('mep.php');
+	require_once('glob_var.inc.php');
+	require_once('design.inc.php');
 	
 	//constante definissant le fichier contenant le n° de la prochaine news
 	$news_dir = 'news/';
@@ -32,23 +31,24 @@
 	//affichage
 	print_header();
   print_news_title($news_content[0]); //affichage de l'entete de la news
+	$txt = "";
 	//affichege illustration
 	$illus_path = $news_dir.$news_file.'.jpg';
 	if(file_exists($illus_path)) {
 		$dim = getimagesize($illus_path);
-		print("<table border=\"0\" cellpadding=\"0\" cellspacing=\"5\" width=\"100%\"><tr align=\"left\" valign=\"top\"><td><img alt=\"$news_file.jpg\" src=\"data/$illus_path\" $dim[3]></td><td class=\"n2\">$news_content[4]</td></tr></table>");
+		$txt .= "<table border=\"0\" cellpadding=\"0\" cellspacing=\"5\" width=\"100%\"><tr align=\"left\" valign=\"top\"><td><img alt=\"$news_file.jpg\" src=\"data/$illus_path\" $dim[3]></td><td class=\"n2\">$news_content[4]</td></tr></table>";
 	}	else 
-		 echo $news_content[4];
+		 $txt .= $news_content[4];
 	//affichage signature avec lien et alignement à droite
 	if($news_content[1] == 'webmaster')
 	  $url = 'about.php';
 	else 
   	$url = 'members.php?name='.$news_content[1];
-  print( "<br><br><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tr><td class=\"newssign\">" );
-  print( "[<a href=\"$url\">$news_content[2]</a>] posté le $news_content[3]" );  //écriture de la signature
-  print( "</td></tr></table>" );  //fermeture table d'alignement
+  $txt .= "<br><br><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tr><td class=\"newssign\">" ;
+  $txt .= "[<a href=\"$url\">$news_content[2]</a>] posté le $news_content[3]" ;  //écriture de la signature
+  $txt .= "</td></tr></table>" ;  //fermeture table d'alignement
 
-	print_news_end();  //fin news	
+	print_news_content($txt);	
 	
   //récupération du n° de news max
 	$file = fopen($news_count_path, 'r+'); 	//ouverture du fichier

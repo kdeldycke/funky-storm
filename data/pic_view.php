@@ -1,8 +1,7 @@
 <?
 		
-  // partie privée : vérifications d'usage
-	require('glob_var.php');
-	require('mep.php');
+	require_once('config.inc.php');
+	require_once('design.inc.php');
 	
 	//on récupére la fin du chemin en cas de CSS
 	$pic = explode("/", $pic);
@@ -42,23 +41,24 @@
 		}
 
 	//affichage
-	print_header();
+	include('header.php');
   print_news_title(ucfirst($name).'<br>'); //affichage de l'entete de la news
-	echo '<center><br>';
+	$txt = "";
+	$txt .= '<center><br>';
   if(isset($prev))
-    print("<a href=\"data/pic_view.php?name=$name&pic=$prev\">photo précédente</a>");
+   $txt .= "<a href=\"data/pic_view.php?name=$name&pic=$prev\">photo précédente</a>";
 	else
-    print("photo précédente");
-	print(" | <a href=\"members.php?name=$name\">retour sur la fiche du membre</a> | ");
+    $txt .= "photo précédente";
+	$txt .= " | <a href=\"members.php?name=$name\">retour sur la fiche du membre</a> | ";
 	if(isset($next))
-	  print("<a href=\"data/pic_view.php?name=$name&pic=$next\">photo suivante</a>");
+	  $txt .= "<a href=\"data/pic_view.php?name=$name&pic=$next\">photo suivante</a>";
 	else
-	  print("photo suivante");
-  echo '<br>';	
+	  $txt .= "photo suivante";
+  $txt .= '<br>';	
 	$dim = getimagesize($photo_path);
-  print("<br><img src=\"data/$photo_path\" alt=\"$pic\" $dim[3]><br><br></center>");
-	print_news_end();  //fin news	
+  $txt .= "<br><img src=\"data/$photo_path\" alt=\"$pic\" $dim[3]><br><br></center>";
+	print_news_content($txt);  //fin news	
 
-	print_footer();
+	include('footer.php');
 		
 ?>

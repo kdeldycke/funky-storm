@@ -1,26 +1,24 @@
 <?
 
-	require('glob_var.php');
-	require('private.php');
-  require('mep.php');
-	print_header('', 1);
-	print_news_title("Liste des news écrites par $name.<br>");
+require_once('private.php');
+require_once('design.inc.php');
+	
+print_header('', 1);
 
-?>
-<br>
-Cliquez sur le nom de la news pour la modifier.<br>
-<br><br>
-<form action="data/news_del.php" method="post">
-<table border="0" cellpadding="2" cellspacing="1" width="100%">
-  <tr class="head">
-    <td>&nbsp;</td>
-		<td>n° news</td>
-		<td>Titre</td>
-		<td>Signature</td>
-		<td>Date/heure</td>
-	</tr>
+print_news_title("Liste des news écrites par $name.<br>");
+  $txt .= "<br>\n" ;
+  $txt .= "Cliquez sur le nom de la news pour la modifier.<br>\n" ;
+  $txt .= "<br><br>\n" ;
+  $txt .= "<form action=\"data/news_del.php\" method=\"post\">\n" ;
+  $txt .= "<table border=\"0\" cellpadding=\"2\" cellspacing=\"1\" width=\"100%\">\n" ;
+  $txt .= "  <tr class=\"head\">\n" ;
+  $txt .= "    <td>&nbsp;</td>\n" ;
+  $txt .= "		<td>n° news</td>\n" ;
+  $txt .= "		<td>Titre</td>\n" ;
+  $txt .= "		<td>Signature</td>\n" ;
+  $txt .= "		<td>Date/heure</td>\n" ;
+  $txt .= "	</tr>\n" ;
 
-<?
 	//constante definissant le fichier contenant le n° de la prochaine news
 	$news_dir = 'news/';
 	$news_count_file = 'count.int';
@@ -47,25 +45,26 @@ Cliquez sur le nom de la news pour la modifier.<br>
 			}
 			if($name==$news_content[1]) {  //on selectionne uniquement les news du membre
 			  //affichage de la ligne correspondant à la news $i
-  			print( "		<tr class=\"date\">\n" );
-  			print( "      <td class=\"dateinfo\"><input type=\"checkbox\" class=\"field\" name=\"news$i\"></td>\n" );
-  			print( "      <td class=\"dateinfo\">$i</td>\n" );
-      	print( "<td class=\"datedate\"><a href=\"data/news_add.php?action=modif&news_number=$i\">$news_content[0]</a></td>" );
-  			print( "      <td class=\"dateinfo\">$news_content[2]</td>\n" );
-  			print( "      <td class=\"dateinfo\">$news_content[3]</td>\n" );
-  			print( "    </tr>\n" );
-  			print( "		<tr><td colspan=\"5\"><hr width=\"100%\" size=\"1\"></td></tr>\n" );
+  			$txt .= "		<tr class=\"date\">\n" ;
+  			$txt .= "      <td class=\"dateinfo\"><input type=\"checkbox\" class=\"field\" name=\"news$i\"></td>\n" ;
+  			$txt .= "      <td class=\"dateinfo\">$i</td>\n" ;
+      	$txt .= "<td class=\"datedate\"><a href=\"data/news_add.php?action=modif&news_number=$i\">$news_content[0]</a></td>" ;
+  			$txt .= "      <td class=\"dateinfo\">$news_content[2]</td>\n" ;
+  			$txt .= "      <td class=\"dateinfo\">$news_content[3]</td>\n" ;
+  			$txt .= "    </tr>\n" ;
+  			$txt .= "		<tr><td colspan=\"5\"><hr width=\"100%\" size=\"1\"></td></tr>\n" ;
 			}
 		} else {              //puisqu'on affiche pas la news n°i
 		  $nb_news_to_show++; //alors on va cherhcer une news plus loin
 		}
 	}
 
-	print( "<tr><td colspan=\"5\"><input type=\"submit\" name=\"submit\" value=\"Supprimer les news sélectionnées\" class=\"field\"></td></tr></table></form>" ); //on ferme le tableau et le formulaire
-  print( "<br><br>\n" );
-  print( "<a href=\"admins/menu.php\">Retour au menu de l'espace perso</a><br>\n" );
-	
-  print_news_end();
-	print_footer();
+	$txt .= "<tr><td colspan=\"5\"><input type=\"submit\" name=\"submit\" value=\"Supprimer les news sélectionnées\" class=\"field\"></td></tr></table></form>" ; //on ferme le tableau et le formulaire
+  $txt .= "<br><br>\n" ;
+  $txt .= "<a href=\"admins/menu.php\">Retour au menu de l'espace perso</a><br>\n" ;
+print_news_content($txt);
+
+
+print_footer();
 	
 ?>

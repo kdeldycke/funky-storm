@@ -4,6 +4,5 @@ CREATE TABLE `guestbook` (
 			 `post_date` DATETIME NOT NULL,
 			 `author` VARCHAR(50) NOT NULL,
 			 `mail` VARCHAR(100),
-			 `message` TEXT NOT NULL,
-			 UNIQUE (`id`)
+			 `message` TEXT NOT NULL
 );

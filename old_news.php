@@ -1,24 +1,23 @@
 <?
 
-	require('glob_var.php');
-  require('mep.php');
+  require('design.inc.php');
 	
-	print_header();
-	print_news_title("Liste des anciennes news<br>");
+include('header.php');
 
-?>
-<br>
-Cliquez sur le nom de la news pour la lire.<br>
-<br><br>
-<table border="0" cellpadding="2" cellspacing="1" width="100%">
-  <tr class="head">
-		<td>n° news</td>
-		<td>Titre</td>
-		<td>Signature</td>
-		<td>Date/heure</td>
-	</tr>
+	
+print_news_title("Liste des anciennes news<br>");
+	$txt  = "";
+  $txt .= "<br>\n" ;
+  $txt .= "Cliquez sur le nom de la news pour la lire.<br>\n" ;
+  $txt .= "<br><br>\n" ;
+  $txt .= "<table border=\"0\" cellpadding=\"2\" cellspacing=\"1\" width=\"100%\">\n" ;
+  $txt .= "  <tr class=\"head\">\n" ;
+  $txt .= "		<td>n° news</td>\n" ;
+  $txt .= "		<td>Titre</td>\n" ;
+  $txt .= "		<td>Signature</td>\n" ;
+  $txt .= "		<td>Date/heure</td>\n" ;
+  $txt .= "	</tr>\n" ;
 
-<?
 	//constante definissant le fichier contenant le n° de la prochaine news
 	$news_dir = 'data/news/';
 	$news_count_file = 'count.int';
@@ -48,21 +47,22 @@ Cliquez sur le nom de la news pour la lire.<br>
 			  else 
   			  $url = 'members.php?name='.$news_content[1];
 				//affichage de la ligne correspondant à la news $i
-  			print( "		<tr class=\"date\">\n" );
-  			print( "      <td class=\"dateinfo\">$i</td>\n" );
-      	print( "<td class=\"datedate\"><a href=\"data/viewnews.php?news_number=$i\">$news_content[0]</a></td>" );
-  			print( "      <td class=\"dateinfo\"><a href=\"$url\">$news_content[2]</td>\n" );
-  			print( "      <td class=\"dateinfo\">$news_content[3]</td>\n" );
-  			print( "    </tr>\n" );
-  			print( "		<tr><td colspan=\"4\"><hr width=\"100%\" size=\"1\"></td></tr>" );
+  			$txt .= "		<tr class=\"date\">\n" ;
+  			$txt .= "      <td class=\"dateinfo\">$i</td>\n" ;
+      	$txt .= "<td class=\"datedate\"><a href=\"data/viewnews.php?news_number=$i\">$news_content[0]</a></td>" ;
+  			$txt .= "      <td class=\"dateinfo\"><a href=\"$url\">$news_content[2]</td>\n" ;
+  			$txt .= "      <td class=\"dateinfo\">$news_content[3]</td>\n" ;
+  			$txt .= "    </tr>\n" ;
+  			$txt .= "		<tr><td colspan=\"4\"><hr width=\"100%\" size=\"1\"></td></tr>" ;
 		} else {              //puisqu'on affiche pas la news n°i
 		  $nb_news_to_show++; //alors on va cherhcer une news plus loin
 		}
 	}
 	
-  print("</table>");
+  $txt .= "</table>";
+print_news_content($txt);
+
 	
-  print_news_end();
-	print_footer();
+include('footer.php');
 	
 ?>

@@ -1,10 +1,6 @@
 <?
-	require('glob_var.php');
-  require('mep.php');
-  print_header();
-  print_news_title("Authentification<br>");
-	
-	$max_len = 50;  //longueur maximale des login/password
+
+	$max_len = 32;  //longueur maximale des login/password
 
 ?>
 
@@ -26,16 +22,16 @@ if (isset($e)) {
 ?>
 
 <br>
-<form action="admins/login.php" method="post">
+<form action="login.php" method="post">
   <table border="0" cellpadding="0" cellspacing="5">
     <tr>
       <td>Login :</span></td>
-      <td><input class="field" type="text" name="login" value="" size="18" maxlength="<? echo $max_len; ?>"></td>
-		  <td rowspan="3" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="Fort Boyard" src="data/key.jpg" height="100" width="168"></td>
+      <td><input class="field" type="text" name="user_login" value="" size="18" maxlength="<? echo $max_len; ?>"></td>
+		  <td rowspan="3" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="Fort Boyard" src="key.jpg" height="100" width="168"></td>
     </tr>
     <tr>
       <td>Password :</span></td>
-      <td><input class="field" type="password" name="password" value="" size="18" maxlength="<? echo $max_len; ?>"></td>
+      <td><input class="field" type="password" name="user_password" value="" size="18" maxlength="<? echo $max_len; ?>"></td>
 	  </tr>
     <tr>
       <td>&nbsp;</td>
@@ -44,11 +40,4 @@ if (isset($e)) {
   </table>
 </form>
 <br>
-	 
-	 
-<?
 
-  print_news_end();
-  print_footer();
-	
-?>
