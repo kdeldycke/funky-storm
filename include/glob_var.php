@@ -6,7 +6,8 @@
 // maison
 //--------------------------------------------------------
 
-  define (home, "http://127.0.0.1/current_funky/");
+//  define (home, "http://60gp.ovh.net/~funkysto/");
+  define (home, "http://www.funky-storm.com/");
 
 	
 	
@@ -32,16 +33,6 @@
   $auth_table["guillaume"] = array("ma", "guillaume");
   $auth_table["emeric"] = array("ma", "emeric");
 	
-	
-
-//--------------------------------------------------------
-// acces base de données
-//--------------------------------------------------------
-  $cfgHost  = "localhost";
-  $cfgUser  = "root";
-  $cfgPass  = "";	
-  $cfgBase  = "Current_FS";
-
 
 	
 ?>

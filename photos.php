@@ -23,6 +23,26 @@
       <td>Evénement</td>
 			<td>Date</td>
     </tr>
+	<tr class="date">
+    	<td class="dateinfo"><a href="data/gig_pics.php?date=200903">Première partie de Rue Tabac Gars à Lécluse</a></td>
+      <td class="dateinfo">20 septembre 2003</td>
+  	</tr>
+    <tr><td colspan="5"><hr width="100%" size="1"></td></tr>
+		<tr class="date">
+    	<td class="dateinfo"><a href="data/gig_pics.php?date=190703">Concert en Angleterre pour le "Battle of the Bands"</a></td>
+      <td class="dateinfo">20 juin 2003</td>
+  	</tr>
+		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
+		<tr class="date">
+    	<td class="dateinfo"><a href="data/gig_pics.php?date=200603">Fête de la musique à Sin-le-Noble</a></td>
+      <td class="dateinfo">20 juin 2003</td>
+  	</tr>
+		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
+		<tr class="date">
+    	<td class="dateinfo"><a href="data/gig_pics.php?date=240503">Van Gogh avec DOC.NO pour leur premier concert</a></td>
+      <td class="dateinfo">24 mai 2003</td>
+  	</tr>
+		<tr><td colspan="5"><hr width="100%" size="1"></td></tr>
 		<tr class="date">
     	<td class="dateinfo"><a href="data/gig_pics.php?date=080303">Minck café pour un set acoustique</a></td>
       <td class="dateinfo">8 mars 2003</td>

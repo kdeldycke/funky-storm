@@ -1,13 +1,9 @@
 <?
-
-
-
 //--------------------------------------------------------
 // fonction permettant, dans un espace perso, de detruire la session
 // si on s'en va dans le domaine public.
 // Le SID est automatiquement ajouté chez Free.
 //--------------------------------------------------------
-
   function public_link($dest_page) {
     unset($pre_option); //initialisation variables
     unset($post_option);
@@ -15,13 +11,11 @@
 			$pre_option = 'admins/logout.php?url=';  //on ajoute la redirection vers le logout pour les liens publics
 	  return $pre_option.$dest_page; //on retourne la chaine/lien
   }
-
 	
 	
 //--------------------------------------------------------
 // Fonction d'affichage pour mise en page
 //--------------------------------------------------------
-
   //contenu de la barre juste sous le bandeau FS
   define (high_line_content, "Funky Storm est un groupe français de Fusion/Funk/Rock farandoleux, énergique et vivant.<br>");
 	
@@ -31,7 +25,7 @@
   print( "<head>" );
   print( "<title>&gt;&gt;&gt;&gt;&gt;&nbsp;&nbsp;FUNKY STORM&nbsp;&nbsp;&lt;&lt;&lt;&lt;&lt; {site officiel}</title>" );
 	if(contexte == "phorum") {
-	  $relative_path = "../";	  
+	  $relative_path = "../";
 	} else {
 	  $relative_path = "";
     print( "<base href=\"");
@@ -54,7 +48,7 @@
   print( "<meta name=\"revisit-after\" content=\"15 days\">" );
   print( "<link type=\"text/css\" rel=\"stylesheet\" href=\"".$relative_path."include/style.css\" media=\"screen\">" );
 	if(contexte == "phorum") {
-	  print( "<link type=\"text/css\" rel=\"stylesheet\" href=\"".$relative_path."phorum/phorum.css\" media=\"screen\">" );	  
+	  print( "<link type=\"text/css\" rel=\"stylesheet\" href=\"".$relative_path."phorum/phorum.css\" media=\"screen\">" );
 	}
 	print( "<script type=\"text/javascript\" language=javascript src=\"".$relative_path."include/common.js\">" );
   print( "  <!-- MM_reloadPage(true); //-->" );
@@ -64,7 +58,6 @@
 	  if(isset($preloaded_img))
 	  print(" onload=\"MM_preloadImages(".$preloaded_img.")\"");
 	print( ">" );
-
   print( "<!-- table principale: lignes 100% -->" );
   print( "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">" );
   print( "	<tr><td class=\"line\"><img alt=\"\" src=\"".$relative_path."include/nothing.gif\" height=\"3\" width=\"1\"></td></tr>" );
@@ -75,9 +68,7 @@
   print( "  <a href=\"".public_link($relative_path.'index.php')."\">");
 	print( "  <img alt=\"Retour à la page principale\" src=\"".$relative_path."include/logo.gif\" height=\"100\" width=\"358\" border=\"0\"></a></td>" );
   print( "	<td align=\"right\"><img alt=\"Explosive band !\" src=\"".$relative_path."include/goout.gif\" height=\"100\" width=\"188\" border=\"0\"></td>" );
-  print( "</tr></table>" );
-
-  print( "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">" );
+  print( "</tr></table>" );  print( "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">" );
   print( "	<!-- barre esthetique -->" );
   print( "	<tr><td class=\"line\"><img alt=\"\" src=\"".$relative_path."include/nothing.gif\" height=\"3\" width=\"1\"></td></tr>" );
   print( "	<!-- barre de progression -->" );
@@ -98,8 +89,7 @@
   print( "  					  <tr class=\"m1\"><td>" );
   print( "							  PROCHAIN CONCERT<br>" );
   print( "							</td></tr>" );
-  print( "							<tr class=\"c1\"><td>" );
-  print( "							  <center>20 juin 2003<br>Festival<br>Sin-le-Noble [59]<br></center>" );
+  print( "							<tr class=\"c1\"><td>" );  print( "							  <center><b>Samedi 7 février 2004</b> à 18h30<br>Triple concert à la MJC de Lambres-lez-Douai<br></center>" );
   print( "								<br>" );
   print( "							</td></tr>" );
   print( "						</table>" );
@@ -131,7 +121,6 @@
   print( "					<td valign=\"top\">" );
   print( "					  <table border=\"0\" cellpadding=\"20\" cellspacing=\"0\" width=\"100%\"><tr><td>" );
   }
-
 	function print_news_title($title) {
   print( "              <table cellpadding=\"4\" width=\"100%\" class=\"n0\">" );
 	print( "                <tr><td class=\"n1\">$title</td></tr>" );
@@ -144,7 +133,6 @@
   print( "							<br>" );
   print( "							<br>" );
 	}
-
 	function print_footer() {
 	if(contexte == "phorum") {
 	  $relative_path = "../";	  

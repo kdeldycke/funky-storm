@@ -1,7 +1,4 @@
 <?
-
-print("<b>Referer --> $REQUEST_URI</b>");
-
   require('include/glob_var.php');
   require('include/mep.php');
   print_header();

@@ -43,6 +43,11 @@ function text_check(&$text) {
 		text_check($t);
 
 		if(($a != '') && ($t != '')) {   //si les données necessaires sont présentes
+		  $cfgHote  = "sql2";
+		  $cfgUser  = "funkysto";
+		  $cfgPass  = "vwg7HWCc";
+		  $cfgBase  = "funkysto";
+	
 		  $guestbook_table = "guestbook";
 		  $guestbook_base = $cfgBase;
 

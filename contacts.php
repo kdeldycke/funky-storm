@@ -2,17 +2,10 @@
 require('include/glob_var.php');
 require('include/mep.php');
 ?>
-
-
 <!-- insertion en-tête commune + barre de navigation gauche -->
 <? print_header(); ?>
-
-
-
 <!-- debut de la zone de contenu principal -->
-
-  <!-- insertion titre de la news -->
-  <? print_news_title("Contacter Funky Storm<br>"); ?>
+  <!-- insertion titre de la news -->  <? print_news_title("Contacter Funky Storm<br>"); ?>
 	
   <!-- insertion contenu de la news -->
 	<table border="0" cellpadding="0" cellspacing="10">
@@ -34,8 +27,9 @@ require('include/mep.php');
     </tr>
   </table>
 	<br>
-	Pour contacter individuellement les membres du groupes, voici leur adresse respective&nbsp;:<br>
+	Pour contacter individuellement les membres du groupe, voici leurs adresses respectives&nbsp;:<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Emeric</b>&nbsp;: <a href="mailto:emeric@funky-storm.com">emeric@funky-storm.com</a><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Guillaume</b>&nbsp;: <a href="mailto:emeric@funky-storm.com">guillaume@funky-storm.com</a><br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Maxence</b>&nbsp;: <a href="mailto:maxence@funky-storm.com">maxence@funky-storm.com</a><br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Sylvain</b>&nbsp;: <a href="mailto:sylvain@funky-storm.com">sylvain@funky-storm.com</a><br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Vincent</b>&nbsp;: <a href="mailto:vincent@funky-storm.com">vincent@funky-storm.com</a><br>
