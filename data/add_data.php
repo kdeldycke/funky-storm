@@ -2,11 +2,11 @@
 
 
   // partie privée : vérifications d'usage
-	require_once('glob_var.inc.php');
-  require_once('private.php');
+	require('../include/glob_var.php');
+  require('../include/private.php');
 	
 	//c'est juste pour récupérer le nombre d'items max
-	require('items.php');
+	require('../include/items.php');
 	
 	//constante de localisation des fichiers de données
 	$data_dir = 'members/'.strtolower($name).'/';

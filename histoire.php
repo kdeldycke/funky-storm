@@ -1,11 +1,15 @@
 <?
+require('include/glob_var.php');
+require('include/mep.php');
+?>
 
-  require_once('design.inc.php');
 
-  include('header.php');
+<!-- insertion en-tête commune + barre de navigation gauche -->
+<? print_header(); ?>
 
 
- /*
+<!-- debut de la zone de contenu principal -->
+	<? /*
   <!-- insertion titre de la news -->
   <? print_news_title("Les \"grandes\" dates...<br>"); ?>
 
@@ -19,26 +23,25 @@
 						 
   <!-- fermeture de la news -->
   <? print_news_end(); ?>
- */
+   */?>
 
-print_news_title("Le début du commencement de l'histoire de Funky Storm, par Vincent.<br>");
-	$txt  = "";
-  $txt .= "	<br>\n" ;
-  $txt .= "	<center><img alt=\"A certain shade of green...\" src=\"data/nature.jpg\" height=\"301\" width=\"500\"><br></center>\n" ;
-  $txt .= "	<br>\n" ;
-  $txt .= "  &nbsp;&nbsp;&nbsp;&nbsp;Créé courant 2000 le groupe Funky Storm se produisait sous le nom de Spacelewd. Dérouté par un manque de fougue, le groupe se disloque plongeant les membres (et les fans) dans un profond désarrois.<br>\n" ;
-  $txt .= "	<br>\n" ;
-  $txt .= "	&nbsp;&nbsp;&nbsp;&nbsp;Mais fort heureusement l'histoire ne s'arrête pas là. Désormais à la recherche d'un chanteur, Spacelewd ne se doutait pas que le cinquième doigt de la main n'était autre qu'un fan (et aussi ami de longue date). Ceci étant, ils décidèrent de se réunir afin d'éclaircir la situation.<br>\n" ;
-  $txt .= "  <br>\n" ;
-  $txt .= "	&nbsp;&nbsp;&nbsp;&nbsp;C'est alors que tout commença&nbsp;! Un jeune paladin prénommé Vince s'exclama : \"je peux peut être essayer de chanter afin de voir renaître la flamme du bonheur !\". Subjugué par la détermination et la vaillance de cette nouvelle recrue, ils décidèrent de lui donner une chance.<br>\n" ;
-  $txt .= "	<br>\n" ;
-  $txt .= "	&nbsp;&nbsp;&nbsp;&nbsp;C'est alors que Mask, guitariste légendaire, Nemrick guitariste magique, Sylviain bassiste aux doigts d'argent, Guigui batteur au feeling jamais vu auparavant (bref tous bénis des dieux) et désormais Vince virtuose du chant, proclamèrent l'arrivée du groupe : FUNKYSTORM&nbsp;!<br>\n" ;
-  $txt .= "  <br>\n" ;
-  $txt .= "  &nbsp;&nbsp;&nbsp;&nbsp;Ceci est une histoire vraie&nbsp;!<br>\n" ;
-  $txt .= "  <br>		" ;
-print_news_content($txt);
+
+  <? print_news_title("Le début du commencement de l'histoire de Funky Storm, par Vincent.<br>"); ?>
+	<br>
+	<center><img alt="A certain shade of green..." src="data/nature.jpg" height="301" width="500"><br></center>
+	<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Créé courant 2000 le groupe Funky Storm se produisait sous le nom de Spacelewd. Dérouté par un manque de fougue, le groupe se disloque plongeant les membres (et les fans) dans un profond désarrois.<br>
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;Mais fort heureusement l'histoire ne s'arrête pas là. Désormais à la recherche d'un chanteur, Spacelewd ne se doutait pas que le cinquième doigt de la main n'était autre qu'un fan (et aussi ami de longue date). Ceci étant, ils décidèrent de se réunir afin d'éclaircir la situation.<br>
+  <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;C'est alors que tout commença ! Un jeune paladin prénommé Vince s'exclama : "je peux peut être essayer de chanter afin de voir renaître la flamme du bonheur !". Subjugué par la détermination et la vaillance de cette nouvelle recrue, ils décidèrent de lui donner une chance.<br>
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;C'est alors que Mask, guitariste légendaire, Nemrick guitariste magique, Sylviain bassiste aux doigts d'argent, Guigui batteur au feeling jamais vu auparavant (bref tous bénis des dieux) et désormais Vince virtuose du chant, proclamèrent l'arrivée du groupe : FUNKYSTORM !<br>
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Ceci est une histoire vraie !<br>
+  <br>		
+  <? print_news_end(); ?>
 	
 	
-  include('footer.php');
-
-?>
+<!-- insertion du bas -->
+<? print_footer(); ?>

@@ -8,6 +8,11 @@
   print("<center><a href=\"guestbook_form.php\">Signer le livre d'or</a><br><br></center>");
 	print_news_title("Livre d'or.<br>");
 	
+	$cfgHote  = "sql2";
+	$cfgUser  = "funkysto";
+	$cfgPass  = "vwg7HWCc";
+	$cfgBase  = "funkysto";
+	
 	$guestbook_table = "guestbook";
 	$guestbook_base = $cfgBase;
 

@@ -1,28 +1,26 @@
 <?
+	require('../include/glob_var.php');
+	require('../include/private.php');
+  require('../include/mep.php');
+	print_header('', 1);
+	print_news_title("Modification des données personelles de $name<br>");
+?>
+<br>
+Il est possible de forcer les retours à la ligne grâce au tag HTML "&lt;br&gt;" (sans les guillemets).<br>
+De même le tag &lt;i&gt;&lt;/i&gt; pour la mise en italique du texte est fonctionnel.<br>
+Les caractères HTML (genre "&...;") sont pris en compte pour tous les champs.<br>
+La commande "\t" (sans les guillemets) permet d'afficher une tabulation.<br>
+Il est interdit d'utiliser le caractère "¤".<br>
+Il est possible de laisser des champs vides.<br>
+<br>
 
-require_once('private.php');
-require_once('design.inc.php');
+<?
 	
-print_header('', 1);
-
-
-print_news_title("Modification des données personelles de $name<br>");
-  $txt  = "";
-  $txt .= "\n" ;
-  $txt .= "<br>\n" ;
-  $txt .= "Il est possible de forcer les retours à la ligne grâce au tag HTML \"&lt;br&gt;\" (sans les guillemets).<br>\n" ;
-  $txt .= "De même le tag &lt;i&gt;&lt;/i&gt; pour la mise en italique du texte est fonctionnel.<br>\n" ;
-  $txt .= "Les caractères HTML (genre \"&...;\") sont pris en compte pour tous les champs.<br>\n" ;
-  $txt .= "La commande \"\\t\" (sans les guillemets) permet d'afficher une tabulation.<br>\n" ;
-  $txt .= "Il est interdit d'utiliser le caractère \"¤\".<br>\n" ;
-  $txt .= "Il est possible de laisser des champs vides.<br>\n" ;
-  $txt .= "<br>\n" ;
-
 	//récuperation des definitions champs
-	require('items.php');
+	require('../include/items.php');
 		
 	//constante de localisation des fichiers de données
-  $data_path = 'members/'.strtolower($name).'/personal.txt';
+  $data_path = 'members/'.$name.'/personal.txt';
   
 	//récupération et affichage des données persos deja existantes
 	if(file_exists($data_path)) { //si fichier de données perso inexistant
@@ -34,28 +32,27 @@ print_news_title("Modification des données personelles de $name<br>");
 		  }
 	}
 	
-  $txt .= "<form action=\"data/add_data.php\" method=\"post\">" ;
-
+?>
+<form action="data/add_data.php" method="post">
+<?
 	//affichage 1 par 1 des champs non vides
 	for($i=0; $i<$items_max; $i++) {
 	  if($items[$i] != '') { //si l'item n'est pas vide
       unset($previous_data); //initialisation variable		
 		  if(isset($exist_item["$i"])) //si il existait déja une entrée dans ce champs
 			  $previous_data = $exist_item["$i"]; //alors on récupére sa valeur
-      $txt .= "<b>$items[$i]</b><br><br>&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"text\" name=\"item_$i\" size=\"50\" maxlength=\"1024\" value=\"$previous_data\" class=\"field\"><br><br><br>" ;
+      print("<b>$items[$i]</b><br><br>&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"text\" name=\"item_$i\" size=\"50\" maxlength=\"1024\" value=\"$previous_data\" class=\"field\"><br><br><br>");
 		}				
 	}
+?>	
+	&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="submit" value="Enregistrer les modifications" class="field"><br>
+	<br>
+</form>
+		
+<br>
+<a href="admins/menu.php">Retour au menu de l'espace perso</a><br>
 	
-  $txt .= "	&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"submit\" name=\"submit\" value=\"Enregistrer les modifications\" class=\"field\"><br>\n" ;
-  $txt .= "	<br>\n" ;
-  $txt .= "</form>\n" ;
-  $txt .= "		\n" ;
-  $txt .= "<br>\n" ;
-  $txt .= "<a href=\"admins/menu.php\">Retour au menu de l'espace perso</a><br>\n" ;
-	
-	
-  print_news_content($txt);
-	
+<?	
+  print_news_end();
 	print_footer();
-	
 ?>

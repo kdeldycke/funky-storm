@@ -1,42 +1,40 @@
 <?
 
-//------------------------------------------------------------------------------
-// Menu principal de gestion du site selon les droits de l'utilisateur 
-//------------------------------------------------------------------------------
+	require('../include/glob_var.php');
+	require('../include/private.php');
+  require('../include/mep.php');
+	print_header('', 1);
+	print_news_title("Bonjour ".ucfirst($name)." ! Bienvenue dans ton espace perso.<br>");
+  
+	//affichage si opération successful
+	if (isset($ok))
+    echo "<br><span class=\"success\">L'opération s'est déroulée avec succés !</span><br>";
+	
+?>
 
-require_once('private_keeper.php');
+	<br>
+	<a href="data/news_add.php">ecrire une news</a><br>
+	<a href="data/illus_all.php">ajouter/modifier les illustrations de mes news</a><br>
+	<a href="data/news_list.php">modifier/supprimer mes news</a><br>
+	<br>
+<?
+  if($name != 'webmaster')
+    print( "  	<a href=\"data/persdata.php\">modifier les infos de ma fiche de membre</a><br>\n" );
+?>
+  <?/*<a href="admins/perspics.php">*/?>ajouter une photo sur ma fiche de membre<br>
+  <br>
+	ajouter une date de concert<br>
+	ajouter une photo de concert<br>
+	<br>
+	ajouter une date dans l'histoire du groupe<br>
+	<br>
+<?
+  if($name != 'webmaster') {
+	  print( "<a href=\"admins/logout.php?url=members.php&member_name=$name\">fiche de membre du groupe</a><br>\n" );
+    print( "	<br>\n" );
+  }
 
-
-if(isset($user_login))
-		print("<br>Bonjour $user_login !<br>");
-
-print("(utilisateur n°$user_id)<br>");
-
-if($ok == 1)
-		print("<br><span class=\"success\">L'opération s'est déroulée avec succés !</span><br>");
-
-if($news_writer == 'Y' || $news_admin == 'Y') {
-		print("<br>News<br>");
-		print("<a href=\"news_form.php\">Ecrire une news</a><br>");
-		print("<a href=\"news_manager.php\">Gérer mes news</a><br>");
-}
-    
-if($questions == 'Y') {
-		print("<br>Espace perso<br>");
-		print("<a href=\"questions.php\">Mofifier/remplir mon test de répartie</a><br>");
-    print("<a href=\"pics_add.php\">Ajouter une photo</a><br>");
-    print("<a href=\"pics_manager.php\">Gérer mes photos</a><br>");
-}
-    
-print("<br>Administration<br>");
-if($news_admin == 'Y')
-		print("<a href=\"news_admin.php\">News</a><br>");
-if($guestbook_admin == 'Y')  
-		print("<a href=\"guestbook_admin.php\">Livre d'or</a><br>");
-if($questions_admin == 'Y')
-		print("<a href=\"questions_admin.php\">Test de répartie</a><br>");
-
-print("<br>Divers<br>");
-print("<a href=\"logout.php\">Quitter (logout)</a><br>");
-
+  print_news_end();
+	print_footer();
+	
 ?>

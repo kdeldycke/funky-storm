@@ -15,7 +15,7 @@
 // utilisateur enregistré ? == toutes les variables de sessions sont-elles enregistrées ?
 //--------------------------------------------------------
 
-  if (!session_is_registered('login') || !session_is_registered('password')) {
+  if (!session_is_registered('user_login') || !session_is_registered('user_password')) {
       session_destroy();
       header('location: '.home.'403.php');
   }

@@ -72,6 +72,11 @@
 	// Web:    http://www.phpinfo.net/                                           //
 	// ------------------------------------------------------------------------- //
 
+	$cfgHote  = "sql2";
+	$cfgUser  = "funkysto";
+	$cfgPass  = "vwg7HWCc";
+	$cfgBase  = "funkysto";
+
 	$cfgTable = "main_forum";
 	$cfgRep   = "phorum/";
 	$cfgRead  = "read.php";
@@ -136,6 +141,8 @@
 	$resultat = mysql_db_query($cfgBase, $sql);
 	$enr = mysql_fetch_array($resultat);
 	echo " [".$enr[0]." hier]";
+	
+	mysql_close($db_connect_id);
 	
 	print_news_end();
 	

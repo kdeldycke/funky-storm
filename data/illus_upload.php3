@@ -1,12 +1,20 @@
 <?
 
-  // partie privée : vérifications d'usage
-	require_once('config.inc.php');
-  require_once('private.php');
+function repetition_chaine($str, $n)
+{
+    $boucle = $n;
+    $sortie = "";
+    while ($boucle>0) {
+        $boucle--;
+        $sortie .= $str;
+    }
+    return $sortie;
+}
 
+	require('../include/glob_var.php');
 	
 	settype($news_number, string);	// convertion du n° de news en chaine
-	$news_file = str_repeat("0", 4 - strlen($news_number)).$news_number;
+	$news_file = repetition_chaine("0", 4 - strlen($news_number)).$news_number;
   //upload de l'image
 	if(($dl_image=='none') || ($dl_image_size>(30*1024)))  // image trop grosse ? = > 30ko
 	 	$erreur = 1;

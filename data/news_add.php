@@ -1,9 +1,9 @@
 <?
 		
   // partie privée : vérifications d'usage
-	require('glob_var.php');
-  require('private.php');
-	require('mep.php');
+	require('../include/glob_var.php');
+  require('../include/private.php');
+	require('../include/mep.php');
 	
 	//constante definissant le fichier contenant le n° de la prochaine news
 	$news_dir = 'news/';
@@ -114,6 +114,8 @@
 			if($illus_del)
 			  unlink($news_dir.$news_file.'.jpg');
 		  //enregistrement fichier
+			if($illus_del)
+			  unlink($news_dir.$news_file.'.jpg');			
 	    touch($news_path); // creation du fichier contenant la nouvelle news
     	$news = fopen($news_path, 'r+'); 	//ouverture de la news
  	  	fputs($news, $news_title."\n");  // ligne 1: titre de la news

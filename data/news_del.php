@@ -1,8 +1,8 @@
 <? 
 
   // partie privée : vérifications d'usage
-	require_once('glob_var.inc.php');
-  require_once('private.php');
+	require('../include/glob_var.php');
+  require('../include/private.php');
 
 	//constante definissant le fichier contenant le n° de la prochaine news
 	$news_dir = 'news/';

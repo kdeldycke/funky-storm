@@ -1,6 +1,7 @@
 <?
 
-	require_once('glob_var.inc.php');
+	require("../include/glob_var.php");
+	require("../include/mep.php");
 			
 	//reformatage de la variable date pour evite le CSS
 	settype($date, integer);
